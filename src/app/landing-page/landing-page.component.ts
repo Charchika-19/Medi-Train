@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,62 +6,46 @@ import { Router } from '@angular/router';
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.scss']
 })
-export class LandingPageComponent implements OnInit {
-  pharmacist: any = null;
-  notifications: number = 0; // Simulated new medicine requests
-  stockLevel: number = 20; // Example stock level
-  nearestDeliveryBoy: string = 'Loading...';
+export class LandingPageComponent {
+  pharmacist: any = {};
+  notifications: number = 5; // Example: Notifications count
+  nearestDeliveryBoy: string = 'John Doe'; // Example: Nearest delivery boy
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    this.loadPharmacistData();
+  }
 
-  ngOnInit() {
-    this.pharmacist = JSON.parse(localStorage.getItem('currentUser') || '{}');
-
-    if (!this.pharmacist || !this.pharmacist.email) {
-      this.router.navigate(['/pharmacist-login']);
+  // Load pharmacist data (Example: From localStorage)
+  loadPharmacistData() {
+    const user = localStorage.getItem('currentUser');
+    if (user) {
+      this.pharmacist = JSON.parse(user);
     }
-
-    this.checkNotifications();
-    this.checkStockLevel();
-    this.findNearestDeliveryBoy();
   }
 
-  checkNotifications() {
-    this.notifications = Math.floor(Math.random() * 5);
+  // Navigate to Normal Medicines Orders
+  goToNormalOrders() {
+    this.router.navigate(['/orders/normal']);
   }
 
-  checkStockLevel() {
-    this.stockLevel = Math.floor(Math.random() * 50) + 10;
+  // Navigate to Prescribed Medicines Orders
+  goToPrescribedOrders() {
+    this.router.navigate(['/orders/prescribed']);
   }
 
-  findNearestDeliveryBoy() {
-    // Simulated logic: In a real app, this would be fetched from an API
-    const deliveryBoys = ['Rahul (1.2 km away)', 'Amit (0.8 km away)', 'Priya (2.5 km away)'];
-    this.nearestDeliveryBoy = deliveryBoys[Math.floor(Math.random() * deliveryBoys.length)];
-  }
-
-  goToOrders() {
-    this.router.navigate(['/pharmacist-orders']);
-  }
-
+  // Track ongoing deliveries
   trackDelivery() {
-    this.router.navigate(['/delivery-tracking']);
+    this.router.navigate(['/track-delivery']);
   }
 
-  manageStock() {
-    this.router.navigate(['/stock-management']);
-  }
-
+  // Track nearest delivery boy
   trackNearestDeliveryBoy() {
-    this.router.navigate(['/delivery-boy-tracking']);
+    this.router.navigate(['/track-nearest-delivery-boy']);
   }
 
-  goToProfile() {
-    this.router.navigate(['/pharmacist-profile']);
-  }
-
+  // Logout and redirect to the login page
   logout() {
-    localStorage.removeItem('currentUser');
-    this.router.navigate(['/phar-login']);
+    localStorage.removeItem('currentUser'); // Clear user session
+    this.router.navigate(['/phar-login']); // Redirect to login page
   }
 }
