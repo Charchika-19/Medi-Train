@@ -1,0 +1,88 @@
+<div class="full-page">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <div class="card shadow-lg">
+          <div class="card-body">
+            <h2 class="text-center mb-4">
+              {{ isRegisterMode ? 'Pharmacist Registration' : 'Pharmacist Login' }}
+            </h2>
+
+            <form [formGroup]="pharLoginForm" (ngSubmit)="onSubmit()">
+              <!-- Name Field (Only for Registration) -->
+              <div *ngIf="isRegisterMode" class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  formControlName="name"
+                  class="form-control"
+                  [ngClass]="{ 'is-invalid': pharLoginForm.controls['name'].invalid && pharLoginForm.controls['name'].touched }"
+                />
+                <div
+                  class="invalid-feedback"
+                  *ngIf="pharLoginForm.controls['name'].invalid && pharLoginForm.controls['name'].touched"
+                >
+                  Name is required.
+                </div>
+              </div>
+
+              <!-- Email Field -->
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  formControlName="email"
+                  class="form-control"
+                  [ngClass]="{ 'is-invalid': pharLoginForm.controls['email'].invalid && pharLoginForm.controls['email'].touched }"
+                />
+                <div
+                  class="invalid-feedback"
+                  *ngIf="pharLoginForm.controls['email'].invalid && pharLoginForm.controls['email'].touched"
+                >
+                  Please enter a valid email.
+                </div>
+              </div>
+
+              <!-- Password Field -->
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  formControlName="password"
+                  class="form-control"
+                  [ngClass]="{ 'is-invalid': pharLoginForm.controls['password'].invalid && pharLoginForm.controls['password'].touched }"
+                />
+                <div
+                  class="invalid-feedback"
+                  *ngIf="pharLoginForm.controls['password'].invalid && pharLoginForm.controls['password'].touched"
+                >
+                  Password must be at least 6 characters.
+                </div>
+              </div>
+
+              <!-- Login/Register Button -->
+              <button type="submit" class="btn btn-primary w-100" [disabled]="pharLoginForm.invalid">
+                {{ isRegisterMode ? 'Register' : 'Login' }}
+              </button>
+            </form>
+
+            <!-- Toggle Login/Register -->
+            <p class="text-center mt-3">
+              <a (click)="toggleMode()">
+                {{ isRegisterMode ? 'Already have an account? Login' : 'Create an account' }}
+              </a>
+            </p>
+
+            <!-- Error Message -->
+            <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+              {{ errorMessage }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

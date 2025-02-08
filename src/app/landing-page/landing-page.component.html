@@ -1,0 +1,67 @@
+<div class="container mt-4">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand">Pharmacist Dashboard</a>
+
+    <!-- Notification Bell -->
+    <div class="ml-auto">
+      <button class="btn btn-outline-primary position-relative" (click)="goToOrders()">
+        🔔 Notifications
+        <span *ngIf="notifications > 0" class="badge badge-danger position-absolute top-0 start-100 translate-middle">
+          {{ notifications }}
+        </span>
+      </button>
+  <button class="btn btn-danger ml-auto" (click)="logout()">Logout</button>
+</div>
+  </nav>
+
+  <div class="jumbotron mt-4">
+    <h1 class="display-4">Welcome, {{ pharmacist?.name }}</h1>
+    <p class="lead">Manage medicine requests and deliveries efficiently.</p>
+  </div>
+
+  <div class="row mt-4">
+    <!-- Manage Orders -->
+    <div class="col-md-3">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">📦 Manage Orders</h5>
+          <p class="card-text">View and process medicine requests.</p>
+          <button class="btn btn-primary" (click)="goToOrders()">Go to Orders</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Track Deliveries -->
+    <div class="col-md-3">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">🚚 Track Deliveries</h5>
+          <p class="card-text">Monitor live delivery status.</p>
+          <button class="btn btn-success" (click)="trackDelivery()">Track Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stock Management -->
+    <div class="col-md-3">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">📊 Check Stock</h5>
+          <p class="card-text">Stock Available: <strong>{{ stockLevel }}</strong> items</p>
+          <button class="btn btn-warning" (click)="manageStock()">check Stock</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Track Nearest Delivery Boy -->
+    <div class="col-md-3">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">🚴 Nearest Delivery Boy</h5>
+          <p class="card-text">Nearest: <strong>{{ nearestDeliveryBoy }}</strong></p>
+          <button class="btn btn-info" (click)="trackNearestDeliveryBoy()">Track Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
