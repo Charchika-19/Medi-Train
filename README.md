@@ -1,12 +1,12 @@
 Group Members Repository
 
-- Angular: GitHub: [github.com/Charchika-19](<[https://github.com/Charchika-19.(https://github.com/Charchika-19/Medi-Train)>)  
+- Angular: GitHub: [github.com/Charchika-19](<[https://github.com/Charchika-19.(https://github.com/Charchika-19/Medi-Train)>)
   https://github.com/Charchika-19/Medi-Train
 
 - Backend: GitHub: [github.com/Aifa1234](<[https://github.com/Aifa1234.(https://github.com/Aifa1234/backend)>)  
    https://github.com/Charchika-19/Medi-Train
 
-- Flutter: Github:[github.com/GouriiNandanaa/medi_trainn](<https://github.com/GouriiNandanaa/medi_trainn).(https://github.com/GouriiNandana/medi_train)>)
+- Flutter: Github:[github.com/GouriiNandanaa/medi_trainn](<[https://github.com/GouriiNandanaa/medi_trainn).(https://github.com/GouriiNandana/medi_train)>)
   https://github.com/GouriiNandanaa/medi_trainn
 
 # MediTrain
