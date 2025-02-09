@@ -9,6 +9,8 @@ import { NormalMedicinesComponent } from './normal-medicines/normal-medicines.co
 import { PrescribedMedicinesComponent } from './prescribed-medicines/prescribed-medicines.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DeliveryBoyLoginComponent } from './delivery-boy-login/delivery-boy-login.component';
+import { Landing1Component } from './landing1/landing1.component';
+import { UpdateStocksComponent } from './update-stocks/update-stocks.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { DeliveryBoyLoginComponent } from './delivery-boy-login/delivery-boy-log
     LandingPageComponent,
     NormalMedicinesComponent,
     PrescribedMedicinesComponent,
-    DeliveryBoyLoginComponent
+    DeliveryBoyLoginComponent,
+    Landing1Component,
+    UpdateStocksComponent
   ],
   imports: [
 

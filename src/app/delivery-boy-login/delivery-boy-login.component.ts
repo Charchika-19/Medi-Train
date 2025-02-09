@@ -80,6 +80,8 @@ export class DeliveryBoyLoginComponent {
     this.http.post(apiUrl, this.deliveryBoyForm.value).subscribe(
       (response: any) => {
         alert(this.isRegisterMode ? 'Registration successful!' : 'Login successful!');
+        this.router.navigate(['/landing1']);
+
         if (this.isRegisterMode) {
           this.toggleMode();
         }
