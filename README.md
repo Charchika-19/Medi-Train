@@ -25,3 +25,52 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Medi Train - Angular Frontend
+
+Overview:-
+
+Medi Train is an application designed to help patients or travelers in trains connect with pharmacies and doctors. This project currently includes features for user authentication, location tracking, and medicine stock management.
+
+Features Implemented
+
+1. User Authentication: Sign-in/Sign-up for both Delivery Boys and Pharmacists.
+
+2. Location Tracking: Real-time tracking of delivery boys.
+
+3. Medicine Stock Management: Pharmacists can update stock.
+
+4. Routing: Implemented navigation between pages.
+
+Tech Stack
+
+1. Frontend: Angular, Bootstrap
+
+2. Backend: Node.js, Express
+
+3. Database: MongoDB / SQL
+
+4. API Communication: HTTPClient for API calls
+
+Prerequisites
+
+1. Node.js
+
+2. Angular CLI
+
+3. MongoDB
+
+# Clone the repository
+
+git clone <repo_url>
+
+# Navigate to the project directory
+
+cd medi-train
+
+# Install dependencies
+
+npm install
+
+# Run the application
+
+ng serve
