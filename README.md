@@ -1,3 +1,14 @@
+Group Members Repository
+
+- Angular: GitHub: [github.com/Charchika-19](<[https://github.com/Charchika-19.(https://github.com/Charchika-19/Medi-Train)>)  
+  https://github.com/Charchika-19/Medi-Train
+
+- Backend: GitHub: [github.com/Aifa1234](<[https://github.com/Aifa1234.(https://github.com/Aifa1234/backend)>)  
+   https://github.com/Charchika-19/Medi-Train
+
+-Flutter: Github:[github.com/GouriiNandanaa/medi_trainn](https://github.com/GouriiNandanaa/medi_trainn)
+https://github.com/GouriiNandanaa/medi_trainn
+
 # MediTrain
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.14.
@@ -31,7 +42,7 @@ Overview:-
 
 Medi Train is an application designed to help patients or travelers in trains connect with pharmacies and doctors. This project currently includes features for user authentication, location tracking, and medicine stock management.
 
-Features Implemented
+Features Implemented:-
 
 1. User Authentication: Sign-in/Sign-up for both Delivery Boys and Pharmacists.
 
@@ -47,7 +58,7 @@ Tech Stack
 
 2. Backend: Node.js, Express
 
-3. Database: MongoDB / SQL
+3. Database: MongoDB
 
 4. API Communication: HTTPClient for API calls
 
@@ -61,7 +72,7 @@ Prerequisites
 
 # Clone the repository
 
-git clone <repo_url>
+git clone https://github.com/Charchika-19/Medi-Train.git
 
 # Navigate to the project directory
 
