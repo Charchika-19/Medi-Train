@@ -1,0 +1,37 @@
+<div class="container mt-4">
+  <div class="col-md-4">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title">🚴 Nearest Delivery Boy</h5>
+        <p class="card-text">Nearest: <strong>{{ nearestDeliveryBoy }}</strong></p>
+        <button class="btn btn-info w-100" click="getDeliveryBoyLocationFromLocalStorage()">Track Now</button>
+
+
+        <h3>Current Coordinates</h3>
+        <p *ngIf="currentPosition && selectedDeliveryBoyLocation">
+          <strong>Current Location:</strong>
+          {{ selectedDeliveryBoyLocation.lat }}, {{ selectedDeliveryBoyLocation.lng }}
+        </p>
+        <h4>Distance between Pharmacist and Delivery Boy:</h4>
+        <p *ngIf="getDistance() !== null">
+          {{ getDistance() }} km
+        </p>
+        <p *ngIf="getDistance() === null">Unable to calculate distance.</p>
+      </div>
+    </div>
+  </div>
+  <h2>Normal Medicine Orders</h2>
+  <div class="card mt-3" *ngFor="let order of orders">
+    <div class="card-body">
+      <h5 class="card-title">{{ order.name }}</h5>
+      <p><strong>Location:</strong> {{ order.location }}</p>
+      <p><strong>Medicine Required:</strong> {{ order.medicine }}</p>
+      <p><strong>Geo Location:</strong> {{ order.geoLocation }}</p>
+
+      <button class="btn btn-success">Accept</button>
+      <button class="btn btn-danger">Deny</button>
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,25 @@
+  <div class="container mt-4">
+    <div class="col-md-4">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">🚴 Nearest Delivery Boy</h5>
+          <p class="card-text">Nearest: <strong>{{ nearestDeliveryBoy }}</strong></p>
+          <button class="btn btn-info w-100" >Track Now</button>
+        </div>
+      </div>
+    </div>
+  <h2>Prescribed Medicine Orders</h2>
+  <div class="card mt-3" *ngFor="let order of orders">
+    <div class="card-body">
+      <h5 class="card-title">{{ order.name }}</h5>
+      <p><strong>Location:</strong> {{ order.location }}</p>
+      <p><strong>Medicine Required:</strong> {{ order.medicine }}</p>
+      <p><strong>Geo Location:</strong> {{ order.geoLocation }}</p>
+      <img [src]="order.prescriptionImage" alt="Prescription img" class="img-fluid mt-2" style="max-width: 200px;">
+<br>
+      <button class="btn btn-success mt-2">Accept</button>
+      <button class="btn btn-danger mt-2">Deny</button>
+
+    </div>
+  </div>
+</div>

@@ -5,10 +5,10 @@
         <div class="card shadow-lg">
           <div class="card-body">
             <h2 class="text-center mb-4">
-              {{ isRegisterMode ? 'Pharmacist Registration' : 'Pharmacist Login' }}
+              {{ isRegisterMode ? 'Delivery Boy Registration' : 'Delivery Boy Login' }}
             </h2>
 
-            <form [formGroup]="pharLoginForm" (ngSubmit)="onSubmit()">
+            <form [formGroup]="deliveryBoyForm" (ngSubmit)="onSubmit()">
               <div *ngIf="isRegisterMode" class="mb-3">
                 <label for="name" class="form-label">Name</label>
                 <input
@@ -16,11 +16,11 @@
                   id="name"
                   formControlName="name"
                   class="form-control"
-                  [ngClass]="{ 'is-invalid': pharLoginForm.controls['name'].invalid && pharLoginForm.controls['name'].touched }"
+                  [ngClass]="{ 'is-invalid': deliveryBoyForm.controls['name'].invalid && deliveryBoyForm.controls['name'].touched }"
                 />
                 <div
                   class="invalid-feedback"
-                  *ngIf="pharLoginForm.controls['name'].invalid && pharLoginForm.controls['name'].touched"
+                  *ngIf="deliveryBoyForm.controls['name'].invalid && deliveryBoyForm.controls['name'].touched"
                 >
                   Name is required.
                 </div>
@@ -34,15 +34,33 @@
                   id="email"
                   formControlName="email"
                   class="form-control"
-                  [ngClass]="{ 'is-invalid': pharLoginForm.controls['email'].invalid && pharLoginForm.controls['email'].touched }"
+                  [ngClass]="{ 'is-invalid': deliveryBoyForm.controls['email'].invalid && deliveryBoyForm.controls['email'].touched }"
                 />
                 <div
                   class="invalid-feedback"
-                  *ngIf="pharLoginForm.controls['email'].invalid && pharLoginForm.controls['email'].touched"
+                  *ngIf="deliveryBoyForm.controls['email'].invalid && deliveryBoyForm.controls['email'].touched"
                 >
                   Please enter a valid email.
                 </div>
               </div>
+
+              <!-- Phone Field -->
+              <!-- <div class="mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input
+                  type="text"
+                  id="phone"
+                  formControlName="phone"
+                  class="form-control"
+                  [ngClass]="{ 'is-invalid': deliveryBoyForm.controls['phone'].invalid && deliveryBoyForm.controls['phone'].touched }"
+                />
+                <div
+                  class="invalid-feedback"
+                  *ngIf="deliveryBoyForm.controls['phone'].invalid && deliveryBoyForm.controls['phone'].touched"
+                >
+                  Phone is required and must be valid.
+                </div>
+              </div> -->
 
               <!-- Password Field -->
               <div class="mb-3">
@@ -52,23 +70,23 @@
                   id="password"
                   formControlName="password"
                   class="form-control"
-                  [ngClass]="{ 'is-invalid': pharLoginForm.controls['password'].invalid && pharLoginForm.controls['password'].touched }"
+                  [ngClass]="{ 'is-invalid': deliveryBoyForm.controls['password'].invalid && deliveryBoyForm.controls['password'].touched }"
                 />
                 <div
                   class="invalid-feedback"
-                  *ngIf="pharLoginForm.controls['password'].invalid && pharLoginForm.controls['password'].touched"
+                  *ngIf="deliveryBoyForm.controls['password'].invalid && deliveryBoyForm.controls['password'].touched"
                 >
                   Password must be at least 6 characters.
                 </div>
               </div>
 
-              <button type="submit" class="btn btn-primary w-100" [disabled]="pharLoginForm.invalid">
+              <button type="submit" class="btn btn-primary w-100" [disabled]="deliveryBoyForm.invalid" click="trackNearestDeliveryBoy()">
                 {{ isRegisterMode ? 'Register' : 'Login' }}
               </button>
             </form>
 
             <p class="text-center mt-3">
-              <a (click)="toggleMode()" style="cursor: 'pointer'">
+              <a (click)="toggleMode()" style="cursor: pointer;">
                 {{ isRegisterMode ? 'Already have an account? Login' : 'Create an account' }}
               </a>
             </p>

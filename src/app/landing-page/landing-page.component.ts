@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 export class LandingPageComponent {
   pharmacist: any = {};
   notifications: number = 5; // Example: Notifications count
-  nearestDeliveryBoy: string = 'John Doe'; // Example: Nearest delivery boy
 
   constructor(private router: Router) {
     this.loadPharmacistData();
@@ -28,6 +27,7 @@ export class LandingPageComponent {
     this.router.navigate(['/orders/normal']);
   }
 
+
   // Navigate to Prescribed Medicines Orders
   goToPrescribedOrders() {
     this.router.navigate(['/orders/prescribed']);
@@ -38,14 +38,13 @@ export class LandingPageComponent {
     this.router.navigate(['/track-delivery']);
   }
 
-  // Track nearest delivery boy
-  trackNearestDeliveryBoy() {
-    this.router.navigate(['/track-nearest-delivery-boy']);
-  }
+
 
   // Logout and redirect to the login page
   logout() {
     localStorage.removeItem('currentUser'); // Clear user session
     this.router.navigate(['/phar-login']); // Redirect to login page
   }
+
+
 }
