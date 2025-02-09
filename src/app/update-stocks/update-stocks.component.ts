@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UpdateStocksComponent implements OnInit {
   updateStockForm: FormGroup;
-  private apiUrl = 'https://localhost:5000/api/medicine';
+  private apiUrl = 'http://localhost:5000/api/medicine/add';
 
   constructor(
     private fb: FormBuilder,
@@ -30,7 +30,7 @@ export class UpdateStocksComponent implements OnInit {
   onSubmit(): void {
     if (this.updateStockForm.valid) {
       let stockData = this.updateStockForm.value;
-      stockData.expiryDate = this.invertDateFormat(stockData.expiryDate); // Convert Date format
+      stockData.expiryDate = this.invertDateFormat(stockData.expiryDate);
 
       console.log("Formatted Data:", stockData);
 
