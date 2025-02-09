@@ -6,8 +6,8 @@ Group Members Repository
 - Backend: GitHub: [github.com/Aifa1234](<[https://github.com/Aifa1234.(https://github.com/Aifa1234/backend)>)  
    https://github.com/Charchika-19/Medi-Train
 
--Flutter: Github:[github.com/GouriiNandanaa/medi_trainn](https://github.com/GouriiNandanaa/medi_trainn)
-https://github.com/GouriiNandanaa/medi_trainn
+- Flutter: Github:[github.com/GouriiNandanaa/medi_trainn](<https://github.com/GouriiNandanaa/medi_trainn).(https://github.com/GouriiNandana/medi_train)>)
+  https://github.com/GouriiNandanaa/medi_trainn
 
 # MediTrain
 
