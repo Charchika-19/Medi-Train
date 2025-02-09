@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class UpdateStocksComponent implements OnInit {
   updateStockForm: FormGroup;
   private apiUrl = 'http://localhost:5000/api/medicine/add';
-
+stockData:any={}
   constructor(
     private fb: FormBuilder,
     private http: HttpClient
@@ -29,12 +29,12 @@ export class UpdateStocksComponent implements OnInit {
 
   onSubmit(): void {
     if (this.updateStockForm.valid) {
-      let stockData = this.updateStockForm.value;
-      stockData.expiryDate = this.invertDateFormat(stockData.expiryDate);
+      this.stockData = this.updateStockForm.value;
+      this.stockData.expiryDate = this.invertDateFormat(this.stockData.expiryDate);
 
-      console.log("Formatted Data:", stockData);
+      console.log("Formatted Data:", this.stockData);
 
-      this.http.put(this.apiUrl, stockData).subscribe(
+      this.http.post(this.apiUrl, this.stockData).subscribe(
         response => {
           console.log('Stock updated successfully:', response);
           alert('Stock updated successfully!');
