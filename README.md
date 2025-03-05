@@ -85,3 +85,6 @@ npm install
 # Run the application
 
 ng serve
+
+Delivery boy side
+http://localhost:4200/delivery-boy-login
