@@ -1,3 +1,6 @@
+Hosted url - https://vercel.com/charchikas-projects/medi-train
+Demo link - https://drive.google.com/drive/folders/1cV7KaaHO2yGoJrt-WisHGOz6Nv6YT7Fa
+
 Group Members Repository
 
 - Angular: GitHub: [github.com/Charchika-19](<[https://github.com/Charchika-19.(https://github.com/Charchika-19/Medi-Train)>)
